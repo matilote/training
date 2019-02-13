@@ -17,16 +17,13 @@ class App extends Component {
   
   render() {
     
-    const id = 'tc001'
-    var rekordOmnie = ''
-    for (var klucz = 0; klucz < contentArray.length; klucz++) {
-      var rekord = contentArray[klucz]
-      if (rekord.hasOwnProperty(id)) {
-        rekordOmnie = rekord[id]
-      }
-    }
+    const indexText = contentArray.omnie.filter(element => element.id === 4)
+
+    console.log(indexText[0].text)
     
-    console.log(rekordOmnie)
+    // filter
+    // find
+    // findIndex
 
     return (
       <div className="App">
@@ -35,19 +32,19 @@ class App extends Component {
             <Grid.Column>
               <section>
                 <h1>O mnie</h1>
-                <p></p>
+                <p>{indexText[0].text}</p>
               </section>
             </Grid.Column>
             <Grid.Column>
               <section>
                 <h1>Hobby</h1>
-                  <p>{contentArray[1].text}</p>
+                  <p></p>
               </section>
             </Grid.Column>
             <Grid.Column>
               <section>
                 <h1>Kontakt</h1>
-                <p>{contentArray[2]}</p>
+                <p></p>
               </section>
             </Grid.Column>
           </Grid.Row>
