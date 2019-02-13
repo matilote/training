@@ -3,3 +3,8 @@ body {
   background: #333;
   color: #fff;
 }
+
+body section {
+  background: #444;
+  padding: 2rem;
+}
