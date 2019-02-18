@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import { Grid } from 'semantic-ui-react'
-import content from '../content'
+import { getItem } from '../content'
 
 class App extends Component {
   
@@ -11,15 +11,15 @@ class App extends Component {
 
   render() {
     const id = 1
-    const container = content.filter(el => el.id === id)[0]
+    const item = getItem(id)
     return (
       <div className="App">
         <Grid textAlign='center' columns={3}>
           <Grid.Row>
             <Grid.Column>
-              <section className="about" rel={container.id}>
+              <section className="about" rel={item.id}>
                 O mnie
-                <p>{container.text}</p>
+                <p>{item.text}</p>
               </section>
             </Grid.Column>
             <Grid.Column>
