@@ -5,10 +5,6 @@ import { getItem } from '../content'
 
 class App extends Component {
   
-  // id=1
-  // id=5
-  // id=7
-
   render() {
     const items = {
       about: getItem(1),

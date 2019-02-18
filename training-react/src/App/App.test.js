@@ -14,7 +14,7 @@ const expect = chai.expect
 
 const app = mount(<App />)
 
-it('Section `about` contains text', () => {
+it('Sections contain content history', () => {
   const items = {
     about: {
       id: 1,
