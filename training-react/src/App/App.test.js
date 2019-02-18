@@ -15,17 +15,21 @@ const expect = chai.expect
 const app = mount(<App />)
 
 it('Section `about` contains text', () => {
-  const id = 1
-  const item = getItem(id)
-  expect(app.find('section.about')).to.contain(<p>{item.text}</p>)
-  // eslint-disable-next-line no-unused-expressions
-  expect(app.find(`section.about[rel=${item.id}]`)).to.exist 
-})
+  const items = {
+    about: {
+      id: 1,
+      result: getItem(1),
+    },
+    interests: {
+      id: 5,
+      result: getItem(5)
+    }
+  }
 
-it('Section `interests` contains text', () => {
-  const id = 5
-  const item = getItem(id)
-  expect(app.find('section.interests')).to.contain(<p>{item.text}</p>)
+  expect(app.find('section.about')).to.contain(<p>{items.about.result.text}</p>)
+  expect(app.find('section.interests')).to.contain(<p>{items.interests.result.text}</p>)
   // eslint-disable-next-line no-unused-expressions
-  expect(app.find(`section.interests[rel=${item.id}]`)).to.exist
+  expect(app.find(`section.interests[rel=${items.interests.id}]`)).to.exist
+  // eslint-disable-next-line no-unused-expressions
+  expect(app.find(`section.about[rel=${items.about.id}]`)).to.exist 
 })
