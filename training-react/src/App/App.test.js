@@ -15,12 +15,13 @@ const expect = chai.expect
 const app = mount(<App />)
 
 it('Section `about` contains text', () => {
+  const id = 1
   const containers = content.filter( el => {
-    return el.id === 1
+    return el.id === id
   })
   const text = containers[0].text
   expect(app.find('section.about')).to.contain(<p>{text}</p>)
   // eslint-disable-next-line no-unused-expressions
-  expect(app.find('section.about[rel="1"]')).to.exist 
+  expect(app.find(`section.about[rel=${id}]`)).to.exist 
 })
 
