@@ -19,9 +19,9 @@ it('Section `about` contains text', () => {
   const containers = content.filter( el => {
     return el.id === id
   })
-  const text = containers[0].text
-  expect(app.find('section.about')).to.contain(<p>{text}</p>)
+  const item = containers[0]
+  expect(app.find('section.about')).to.contain(<p>{item.text}</p>)
   // eslint-disable-next-line no-unused-expressions
-  expect(app.find(`section.about[rel=${id}]`)).to.exist 
+  expect(app.find(`section.about[rel=${item.id}]`)).to.exist 
 })
 
