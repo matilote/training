@@ -11,7 +11,9 @@ class App extends Component {
 
   render() {
     const id = 1
+    const id2 = 5
     const item = getItem(id)
+    const item2 = getItem(id2)
     return (
       <div className="App">
         <Grid textAlign='center' columns={3}>
@@ -23,9 +25,9 @@ class App extends Component {
               </section>
             </Grid.Column>
             <Grid.Column>
-              <section>
+              <section className="interests" rel={item2.id}>
                 Zainteresowania
-                <p>Text</p>
+                <p>{item2.text}</p>
               </section>
             </Grid.Column>
             <Grid.Column>

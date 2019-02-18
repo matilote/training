@@ -22,3 +22,10 @@ it('Section `about` contains text', () => {
   expect(app.find(`section.about[rel=${item.id}]`)).to.exist 
 })
 
+it('Section `interests` contains text', () => {
+  const id = 5
+  const item = getItem(id)
+  expect(app.find('section.interests')).to.contain(<p>{item.text}</p>)
+  // eslint-disable-next-line no-unused-expressions
+  expect(app.find(`section.interests[rel=${item.id}]`)).to.exist
+})
