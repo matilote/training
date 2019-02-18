@@ -12,4 +12,8 @@ const content = [
 //   { id: 7, container: 'kontakt', name: 'v2 kontakt', text: 'Napisz do mnie na e-mail: imie@nazwisko.pl', created: '2019-01-11T12:13:47.627Z' },
 //   { id: 8, container: 'kontakt', name: 'v1 kontaktowe', text: 'Tu będą dane kontaktowe', created: '2019-01-02T11:13:47.627Z' }
 
+export const getItem = (id) => {
+  return content.filter(el => el.id === id)[0]
+}
+
 export default content
