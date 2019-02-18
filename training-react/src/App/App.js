@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import { Grid } from 'semantic-ui-react'
+import content from '../content'
 
 class App extends Component {
   
@@ -16,7 +17,7 @@ class App extends Component {
             <Grid.Column>
               <section className="about">
                 O mnie
-                <p>To jednak jest dużo ważniejsze niż poprzedni tekst</p>
+                <p>{content[0]}</p>
               </section>
             </Grid.Column>
             <Grid.Column>

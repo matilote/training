@@ -6,6 +6,8 @@ import Adapter from 'enzyme-adapter-react-16'
 import { shallow, mount, render } from 'enzyme'
 import chai from 'chai'
 import chaiEnzyme from 'chai-enzyme'
+import content from '../content'
+
 configure({ adapter: new Adapter() })
 chai.use(chaiEnzyme())
 const expect = chai.expect
@@ -13,6 +15,7 @@ const expect = chai.expect
 const app = mount(<App />)
 
 it('Section `about` contains text', () => {
-  expect(app.find('section.about')).to.contain(<p>To jednak jest dużo ważniejsze niż poprzedni tekst</p>)
+  const text = content[0]
+  expect(app.find('section.about')).to.contain(<p>{text}</p>)
 })
 
