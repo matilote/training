@@ -15,9 +15,9 @@ class App extends Component {
         <Grid textAlign='center' columns={3}>
           <Grid.Row>
             <Grid.Column>
-              <section className="about">
+              <section className="about" rel={content[0].id}>
                 O mnie
-                <p>{content[0]}</p>
+                <p>{content[0].text}</p>
               </section>
             </Grid.Column>
             <Grid.Column>
