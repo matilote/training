@@ -10,14 +10,16 @@ class App extends Component {
   // id=7
 
   render() {
+    const id = 1
+    const container = content.filter(el => el.id === id)[0]
     return (
       <div className="App">
         <Grid textAlign='center' columns={3}>
           <Grid.Row>
             <Grid.Column>
-              <section className="about" rel={content[0].id}>
+              <section className="about" rel={container.id}>
                 O mnie
-                <p>{content[0].text}</p>
+                <p>{container.text}</p>
               </section>
             </Grid.Column>
             <Grid.Column>

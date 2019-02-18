@@ -16,9 +16,7 @@ const app = mount(<App />)
 
 it('Section `about` contains text', () => {
   const id = 1
-  const containers = content.filter( el => {
-    return el.id === id
-  })
+  const containers = content.filter(el => el.id === id)
   const item = containers[0]
   expect(app.find('section.about')).to.contain(<p>{item.text}</p>)
   // eslint-disable-next-line no-unused-expressions

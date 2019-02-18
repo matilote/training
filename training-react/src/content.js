@@ -1,4 +1,4 @@
-export default [
+const content = [
   { id: 2, text: 'To jednak jest dużo ważniejsze niż poprzedni tekst' },
   { id: 1, container: 'o-mnie', name: 'Coś innego o mnie', text: 'To jednak jest dużo ważniejsze niż poprzedni tekst', created: '2019-02-07T11:13:47.627Z' },
 ]
@@ -11,3 +11,5 @@ export default [
 //   { id: 6, container: 'hobby', name: 'v1 o zainteresowaniach', text: 'To tu napiszę czym się interesuję', created: '2019-02-04T14:13:47.627Z' },
 //   { id: 7, container: 'kontakt', name: 'v2 kontakt', text: 'Napisz do mnie na e-mail: imie@nazwisko.pl', created: '2019-01-11T12:13:47.627Z' },
 //   { id: 8, container: 'kontakt', name: 'v1 kontaktowe', text: 'Tu będą dane kontaktowe', created: '2019-01-02T11:13:47.627Z' }
+
+export default content
