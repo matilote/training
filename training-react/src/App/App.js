@@ -33,9 +33,9 @@ class App extends Component {
               </section>
             </Grid.Column>
             <Grid.Column>
-              <section>
+              <section className="contact" rel={items.contact.id}>
                 Kontakt
-                <p>Text</p>
+                <p>{items.contact.text}</p>
               </section>
             </Grid.Column>
           </Grid.Row>
