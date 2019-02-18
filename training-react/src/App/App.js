@@ -4,31 +4,37 @@ import { Grid } from 'semantic-ui-react'
 
 class App extends Component {
   
+  // id=1
+  // id=5
+  // id=7
+
   render() {
-    const d = new Date()
     return (
       <div className="App">
         <Grid textAlign='center' columns={3}>
           <Grid.Row>
             <Grid.Column>
-              <section>
+              <section className="about">
                 O mnie
+                <p>Text</p>
               </section>
             </Grid.Column>
             <Grid.Column>
               <section>
                 Zainteresowania
+                <p>Text</p>
               </section>
             </Grid.Column>
             <Grid.Column>
               <section>
                 Kontakt
+                <p>Text</p>
               </section>
             </Grid.Column>
           </Grid.Row>
         </Grid>
       </div>
-    );
+    )
   }
 }
 
