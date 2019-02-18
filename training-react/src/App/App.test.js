@@ -23,13 +23,20 @@ it('Section `about` contains text', () => {
     interests: {
       id: 5,
       result: getItem(5)
+    },
+    contact: {
+      id: 7,
+      result: getItem(7)
     }
   }
 
   expect(app.find('section.about')).to.contain(<p>{items.about.result.text}</p>)
   expect(app.find('section.interests')).to.contain(<p>{items.interests.result.text}</p>)
+  expect(app.find('section.contact')).to.contain(<p>{items.contact.result.text}</p>)
   // eslint-disable-next-line no-unused-expressions
   expect(app.find(`section.interests[rel=${items.interests.id}]`)).to.exist
   // eslint-disable-next-line no-unused-expressions
   expect(app.find(`section.about[rel=${items.about.id}]`)).to.exist 
+  // eslint-disable-next-line no-unused-expressions
+  expect(app.find(`section.contact[rel=${items.contact.id}]`)).to.exist   
 })
