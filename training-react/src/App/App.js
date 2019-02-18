@@ -10,24 +10,26 @@ class App extends Component {
   // id=7
 
   render() {
-    const id = 1
-    const id2 = 5
-    const item = getItem(id)
-    const item2 = getItem(id2)
+    const items = {
+      about: getItem(1),
+      interests: getItem(5),
+      contact: getItem(7)
+    }
+
     return (
       <div className="App">
         <Grid textAlign='center' columns={3}>
           <Grid.Row>
             <Grid.Column>
-              <section className="about" rel={item.id}>
+              <section className="about" rel={items.about.id}>
                 O mnie
-                <p>{item.text}</p>
+                <p>{items.about.text}</p>
               </section>
             </Grid.Column>
             <Grid.Column>
-              <section className="interests" rel={item2.id}>
+              <section className="interests" rel={items.interests.id}>
                 Zainteresowania
-                <p>{item2.text}</p>
+                <p>{items.interests.text}</p>
               </section>
             </Grid.Column>
             <Grid.Column>
