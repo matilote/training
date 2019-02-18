@@ -13,5 +13,6 @@ const expect = chai.expect
 const app = mount(<App />)
 
 it('Section `about` contains text', () => {
-  expect(app.find('section.about')).to.contain('Text')
+  expect(app.find('section.about')).to.contain(<p>To jednak jest dużo ważniejsze niż poprzedni tekst</p>)
 })
+

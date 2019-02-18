@@ -16,7 +16,7 @@ class App extends Component {
             <Grid.Column>
               <section className="about">
                 O mnie
-                <p>Text</p>
+                <p>To jednak jest dużo ważniejsze niż poprzedni tekst</p>
               </section>
             </Grid.Column>
             <Grid.Column>
