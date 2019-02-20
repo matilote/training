@@ -6,6 +6,11 @@ import Admin from './Admin'
 
 class Page extends Component {
 
+
+  state = {
+    showAdmin: false
+  }
+
   render() {
     const items = {
       about: getItem(1),
@@ -13,12 +18,10 @@ class Page extends Component {
       contact: getItem(7)
     }
 
-    const showAdmin = false
-
     return (
       <div className="Page">
         <Grid textAlign='center'>
-          { showAdmin ? <Admin /> : undefined }
+          { this.state.showAdmin ? <Admin /> : undefined }
           <Grid.Row columns={3}>
             <Grid.Column>
               <section className="about" rel={items.about.id}>
