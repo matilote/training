@@ -48,6 +48,10 @@ it('hides admin section by default', () => {
   expect(f(admin)).not.to.exist
 })
 
+it('state contains admin section switch', () => {
+  expect(app.state('showAdmin')).to.equal(false)
+})
+
 it('toggles admin section upon button click', () => {
   // expect(f(admin, 'h1')).to.exist
   // eslint-disable-next-line no-unused-expressions
