@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import '../styles/Page.css'
 import { Grid } from 'semantic-ui-react'
 import { getItem } from '../content'
+import Admin from './Admin'
 
 class Page extends Component {
 
@@ -17,9 +18,7 @@ class Page extends Component {
         <Grid textAlign='center' columns={3}>
           <Grid.Row>
             <Grid.Column>
-                <header className="admin">
-
-                </header>
+                <Admin />
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>

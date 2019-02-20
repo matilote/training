@@ -42,6 +42,6 @@ it('Sections contain content history', () => {
 
 it('renders admin section', () => {
   // eslint-disable-next-line no-unused-expressions
-  expect(app.find(Admin)).to.exist
+  expect(app.find('header.admin')).to.exist
 
 })
