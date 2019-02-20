@@ -1,5 +1,6 @@
 import React from 'react'
 import Page from '../components/Page'
+import Admin from '../components/Admin'
 import { configure } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 import { shallow, mount, render } from 'enzyme'
@@ -13,6 +14,7 @@ const expect = chai.expect
 
 const app = mount(<Page />)
 const f = (s, e) => app.find(e ? `${s} ${e}` : s)
+const admin = 'header.admin'
 
 it('Sections contain content history', () => {
   const items = {
@@ -41,10 +43,17 @@ it('Sections contain content history', () => {
   expect(app.find(`section.contact[rel=${items.contact.id}]`)).to.exist   
 })
 
-it('renders admin section', () => {
-  const admin = 'header.admin'
-    
+it('hides admin section by default', () => {
   // eslint-disable-next-line no-unused-expressions
-  expect(f(admin)).to.exist
-  expect(f(admin, 'h1')).to.exist
+  expect(f(admin)).not.to.exist
+})
+
+it('toggles admin section upon button click', () => {
+  // expect(f(admin, 'h1')).to.exist
+  // eslint-disable-next-line no-unused-expressions
+
+  // Symulacja klikniecia
+  // Uzyc enzyme do symulacji
+
+  // Sprawdzic czy komponent jest widoczny
 })

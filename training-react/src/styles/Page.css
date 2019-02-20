@@ -1,3 +1,8 @@
+.App {
+  position: relative;
+  margin: 0;
+}
+
 .Page {
   text-align: center;
 }
@@ -14,6 +19,8 @@
 }
 
 .Page .admin {
+  width: 100%;
   padding: 1.5rem 0;
   background: #838383;
+  margin-bottom: 1.5rem;
 }

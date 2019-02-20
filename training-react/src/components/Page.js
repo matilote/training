@@ -13,14 +13,12 @@ class Page extends Component {
       contact: getItem(7)
     }
 
+    const showAdmin = false
+
     return (
       <div className="Page">
         <Grid textAlign='center'>
-          <Grid.Row>
-            <Grid.Column columns={1}>
-                <Admin />
-            </Grid.Column>
-          </Grid.Row>
+          { showAdmin ? <Admin /> : undefined }
           <Grid.Row columns={3}>
             <Grid.Column>
               <section className="about" rel={items.about.id}>
