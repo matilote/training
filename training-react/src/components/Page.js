@@ -8,13 +8,23 @@ class Page extends Component {
 
 
   state = {
+    forgotten: 'Zapomniano',
     showAdmin: false
   }
 
+  handleToggleAdminClicked = (event, data, x) => {
+    console.log(x)
+    this.setState({
+        showAdmin: !this.state.showAdmin
+    })
+  }
+
   renderToggleAdminButton = () => {
+    const x = 1
     return (
         <Button
           className="toggleAdmin"
+          onClick={(event, data) => this.handleToggleAdminClicked(event, data, x)}
         >
           Włącz admin
         </Button>
@@ -39,7 +49,7 @@ class Page extends Component {
           <Grid.Row columns={3}>
             <Grid.Column>
               <section className="about" rel={items.about.id}>
-                O mnie
+                <h2>{this.state.forgotten} O mnie</h2>
                 <p>{items.about.text}</p>
               </section>
             </Grid.Column>
