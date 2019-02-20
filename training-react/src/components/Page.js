@@ -13,9 +13,10 @@ class Page extends Component {
   }
 
   handleToggleAdminClicked = (event, data, x) => {
-    console.log(x)
+    console.log(x)    
     this.setState({
-        showAdmin: !this.state.showAdmin
+      ...this.state,
+      showAdmin: !this.state.showAdmin
     })
   }
 
