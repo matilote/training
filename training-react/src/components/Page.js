@@ -17,6 +17,12 @@ class Page extends Component {
         <Grid textAlign='center' columns={3}>
           <Grid.Row>
             <Grid.Column>
+                <header className="admin"></header>
+                
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row>
+            <Grid.Column>
               <section className="about" rel={items.about.id}>
                 O mnie
                 <p>{items.about.text}</p>
