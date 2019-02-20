@@ -14,7 +14,11 @@ const expect = chai.expect
 
 const page = mount(<Page />)
 const f = (s, e) => page.find(e ? `${s} ${e}` : s)
-const admin = 'header.admin'
+
+const sel = {
+  admin: 'header.admin',
+  toggleAdminButton: 'button.toggleAdmin'
+}
 
 it('Sections contain content history', () => {
   const items = {
@@ -45,7 +49,7 @@ it('Sections contain content history', () => {
 
 it('hides admin section by default', () => {
   // eslint-disable-next-line no-unused-expressions
-  expect(f(admin)).not.to.exist
+  expect(f(sel.admin)).not.to.exist
 })
 
 it('state contains admin section switch', () => {
@@ -53,8 +57,10 @@ it('state contains admin section switch', () => {
 })
 
 it('toggles admin section upon button click', () => {
-  // expect(f(admin, 'h1')).to.exist
+
   // eslint-disable-next-line no-unused-expressions
+  expect(f(sel.toggleAdminButton)).to.exist
+  // expect(f(sel.admin, 'h1')).to.exist
 
   // Symulacja klikniecia
   // Uzyc enzyme do symulacji
