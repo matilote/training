@@ -12,8 +12,8 @@ configure({ adapter: new Adapter() })
 chai.use(chaiEnzyme())
 const expect = chai.expect
 
-const app = mount(<Page />)
-const f = (s, e) => app.find(e ? `${s} ${e}` : s)
+const page = mount(<Page />)
+const f = (s, e) => page.find(e ? `${s} ${e}` : s)
 const admin = 'header.admin'
 
 it('Sections contain content history', () => {
@@ -32,15 +32,15 @@ it('Sections contain content history', () => {
     }
   }
 
-  expect(app.find('section.about')).to.contain(<p>{items.about.result.text}</p>)
-  expect(app.find('section.interests')).to.contain(<p>{items.interests.result.text}</p>)
-  expect(app.find('section.contact')).to.contain(<p>{items.contact.result.text}</p>)
+  expect(page.find('section.about')).to.contain(<p>{items.about.result.text}</p>)
+  expect(page.find('section.interests')).to.contain(<p>{items.interests.result.text}</p>)
+  expect(page.find('section.contact')).to.contain(<p>{items.contact.result.text}</p>)
   // eslint-disable-next-line no-unused-expressions
-  expect(app.find(`section.interests[rel=${items.interests.id}]`)).to.exist
+  expect(page.find(`section.interests[rel=${items.interests.id}]`)).to.exist
   // eslint-disable-next-line no-unused-expressions
-  expect(app.find(`section.about[rel=${items.about.id}]`)).to.exist 
+  expect(page.find(`section.about[rel=${items.about.id}]`)).to.exist 
   // eslint-disable-next-line no-unused-expressions
-  expect(app.find(`section.contact[rel=${items.contact.id}]`)).to.exist   
+  expect(page.find(`section.contact[rel=${items.contact.id}]`)).to.exist   
 })
 
 it('hides admin section by default', () => {
@@ -49,7 +49,7 @@ it('hides admin section by default', () => {
 })
 
 it('state contains admin section switch', () => {
-  expect(app.state('showAdmin')).to.equal(false)
+  expect(page.state('showAdmin')).to.equal(false)
 })
 
 it('toggles admin section upon button click', () => {
