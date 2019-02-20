@@ -15,13 +15,13 @@ class Page extends Component {
 
     return (
       <div className="Page">
-        <Grid textAlign='center' columns={3}>
+        <Grid textAlign='center'>
           <Grid.Row>
-            <Grid.Column>
+            <Grid.Column columns={1}>
                 <Admin />
             </Grid.Column>
           </Grid.Row>
-          <Grid.Row>
+          <Grid.Row columns={3}>
             <Grid.Column>
               <section className="about" rel={items.about.id}>
                 O mnie

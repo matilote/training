@@ -12,6 +12,7 @@ chai.use(chaiEnzyme())
 const expect = chai.expect
 
 const app = mount(<Page />)
+const f = (s, e) => app.find(e ? `${s} ${e}` : s)
 
 it('Sections contain content history', () => {
   const items = {
@@ -41,7 +42,9 @@ it('Sections contain content history', () => {
 })
 
 it('renders admin section', () => {
+  const admin = 'header.admin'
+    
   // eslint-disable-next-line no-unused-expressions
-  expect(app.find('header.admin')).to.exist
-
+  expect(f(admin)).to.exist
+  expect(f(admin, 'h1')).to.exist
 })
