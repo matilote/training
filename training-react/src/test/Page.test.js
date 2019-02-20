@@ -61,10 +61,12 @@ it('state contains admin section switch', () => {
 it('toggles admin section upon button click', () => {
   // eslint-disable-next-line no-unused-expressions
   expect(f(sel.toggleAdminButton)).to.exist
-  // expect(f(sel.admin, 'h1')).to.exist
-
-  // Symulacja klikniecia
-  // Uzyc enzyme do symulacji
-
+  // expect(f(sel.admin, 'h1')).to.exist`
+  f(sel.toggleAdminButton).simulate('click')
+  expect(page.state('showAdmin')).to.equal(true)
+  // eslint-disable-next-line no-unused-expressions
+  expect(f(sel.admin)).to.exist
+  // eslint-disable-next-line no-unused-expressions
+  expect(f(sel.toggleAdminButton)).not.to.exist
   // Sprawdzic czy komponent jest widoczny
 })
