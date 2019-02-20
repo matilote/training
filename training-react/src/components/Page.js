@@ -17,8 +17,9 @@ class Page extends Component {
         <Grid textAlign='center' columns={3}>
           <Grid.Row>
             <Grid.Column>
-                <header className="admin"></header>
-                
+                <header className="admin">
+
+                </header>
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
