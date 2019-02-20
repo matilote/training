@@ -11,6 +11,16 @@ class Page extends Component {
     showAdmin: false
   }
 
+  renderToggleAdminButton = () => {
+    return (
+        <Button
+          className="toggleAdmin"
+        >
+          Włącz admin
+        </Button>
+    )
+  }
+
   render() {
     const items = {
       about: getItem(1),
@@ -24,7 +34,7 @@ class Page extends Component {
           {
             this.state.showAdmin
               ? <Admin />
-              : <Button className="toggleAdmin">Włącz admin</Button>
+              : this.renderToggleAdminButton()
           }
           <Grid.Row columns={3}>
             <Grid.Column>
