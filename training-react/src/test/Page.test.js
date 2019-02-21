@@ -39,18 +39,14 @@ it('Sections contain content history', () => {
   expect(page.find('section.about')).to.contain(<p>{items.about.result.text}</p>)
   expect(page.find('section.interests')).to.contain(<p>{items.interests.result.text}</p>)
   expect(page.find('section.contact')).to.contain(<p>{items.contact.result.text}</p>)
-  // eslint-disable-next-line no-unused-expressions
-  expect(page.find(`section.interests[rel=${items.interests.id}]`)).to.exist
-  // eslint-disable-next-line no-unused-expressions
-  expect(page.find(`section.about[rel=${items.about.id}]`)).to.exist 
-  // eslint-disable-next-line no-unused-expressions
+
+  expect(page.find(`section.interests[rel=${items.interests.id}]`)).to.exist  
+  expect(page.find(`section.about[rel=${items.about.id}]`)).to.exist   
   expect(page.find(`section.contact[rel=${items.contact.id}]`)).to.exist   
 })
 
-it('hides admin section by default', () => {
-  // eslint-disable-next-line no-unused-expressions
-  expect(f(sel.admin)).not.to.exist
-  // eslint-disable-next-line no-unused-expressions
+it('hides admin section by default', () => { 
+  expect(f(sel.admin)).not.to.exist  
   expect(f(sel.admin, sel.toggleAdminButton)).not.to.exist
 })
 
@@ -58,15 +54,14 @@ it('state contains admin section switch', () => {
   expect(page.state('showAdmin')).to.equal(false)
 })
 
-it('toggles admin section upon button click', () => {
-  // eslint-disable-next-line no-unused-expressions
+it('toggles admin section upon button click', () => {  
   expect(f(sel.toggleAdminButton)).to.exist
-  // expect(f(sel.admin, 'h1')).to.exist`
+  
   f(sel.toggleAdminButton).simulate('click')
   expect(page.state('showAdmin')).to.equal(true)
-  // eslint-disable-next-line no-unused-expressions
+  
   expect(f(sel.admin)).to.exist
-  // eslint-disable-next-line no-unused-expressions
+  
   expect(f(sel.toggleAdminButton)).not.to.exist
   // Sprawdzic czy komponent jest widoczny
 })
