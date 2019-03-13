@@ -16,12 +16,8 @@ const f = (s, e) => page.find(e ? `${s} ${e}` : s)
 
 const sel = {
   admin: 'header.admin',
-  headers: {
-    about: '.input.about'
-  }
 }
 
-it('displays about me header input', () => {
-  // eslint-disable-next-line no-unused-expressions
-  expect(f(sel.admin, sel.headers.about)).to.exist
+it('It renders Admin component', () => {
+  expect(page.find(Admin)).to.have.length(1)
 })

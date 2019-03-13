@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from 'semantic-ui-react'
+import { Button, Grid, Input } from 'semantic-ui-react'
 
 const Admin = (props) => {
 
@@ -16,6 +16,21 @@ const Admin = (props) => {
   return (
     <header className="admin">
       <h1>Admin</h1>
+      <Grid textAlign='center'>
+          <Grid.Row columns={3}>
+            <Grid.Column>
+              <Input
+                className="about"
+              />
+            </Grid.Column>
+            <Grid.Column>
+              b
+            </Grid.Column>
+            <Grid.Column>
+              c
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
       {renderHideAdminButton()}
     </header> 
   )

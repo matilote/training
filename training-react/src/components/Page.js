@@ -7,8 +7,10 @@ import Admin from './Admin'
 class Page extends Component {
 
   state = {
-    forgotten: 'Zapomniano',
-    showAdmin: false
+    headers: {
+      about: 'O mnie'
+    },
+    showAdmin: true
   }
 
   handleToggleAdminClicked = (event, data) => {
@@ -47,7 +49,7 @@ class Page extends Component {
           <Grid.Row columns={3}>
             <Grid.Column>
               <section className="about" rel={items.about.id}>
-                <h2>{this.state.forgotten} O mnie</h2>
+                <h2>{this.state.headers.about}</h2>
                 <p>{items.about.text}</p>
               </section>
             </Grid.Column>

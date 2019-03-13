@@ -13,12 +13,20 @@ chai.use(chaiEnzyme())
 const expect = chai.expect
 
 const page = mount(<Page />)
+page.setState({
+  headers: {
+    about: 'Zapomniano'
+  },
+  showAdmin: false
+})
+
 const f = (s, e) => page.find(e ? `${s} ${e}` : s)
 
 const sel = {
   admin: 'header.admin',
   displayAdminButton: 'button.displayAdmin',
-  hideAdminButton: 'button.hideAdmin'
+  hideAdminButton: 'button.hideAdmin',
+  sectionAbout: 'section.about'
 }
 
 it('Sections contain content history', () => {
@@ -78,4 +86,9 @@ it('hide admin section upon button click', () => {
   // eslint-disable-next-line no-unused-expressions
   f(sel.hideAdminButton).simulate('click')
   expect(page.state('showAdmin')).to.equal(false)
+})
+
+it('displays about me header text as in state', () => {
+  const headers = page.state('headers')
+  expect(f(sel.sectionAbout, 'h2').text()).to.equal(headers.about)
 })
