@@ -6,13 +6,12 @@ import Admin from './Admin'
 
 class Page extends Component {
 
-
   state = {
     forgotten: 'Zapomniano',
     showAdmin: false
   }
 
-  handleEnableAdminClicked = (event, data) => {
+  handleToggleAdminClicked = (event, data) => {
     this.setState({
       ...this.state,
       showAdmin: !this.state.showAdmin
@@ -23,7 +22,7 @@ class Page extends Component {
     return (
         <Button
           className="displayAdmin"
-          onClick={(event, data) => this.handleEnableAdminClicked(event, data)}
+          onClick={(event, data) => this.handleToggleAdminClicked(event, data)}
         >
           Włącz admin
         </Button>
@@ -42,7 +41,7 @@ class Page extends Component {
         <Grid textAlign='center'>
           {
             this.state.showAdmin
-              ? <Admin />
+              ? <Admin toggleAdminClicked={this.handleToggleAdminClicked} />
               : this.renderEnableAdminButton()
           }
           <Grid.Row columns={3}>

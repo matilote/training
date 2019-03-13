@@ -75,4 +75,7 @@ it('displays admin section upon button click', () => {
 it('hide admin section upon button click', () => {
   // eslint-disable-next-line no-unused-expressions
   expect(f(sel.hideAdminButton)).to.exist
+  // eslint-disable-next-line no-unused-expressions
+  f(sel.hideAdminButton).simulate('click')
+  expect(page.state('showAdmin')).to.equal(false)
 })
