@@ -17,7 +17,8 @@ const f = (s, e) => page.find(e ? `${s} ${e}` : s)
 
 const sel = {
   admin: 'header.admin',
-  toggleAdminButton: 'button.toggleAdmin'
+  displayAdminButton: 'button.displayAdmin',
+  hideAdminButton: 'button.hideAdmin'
 }
 
 it('Sections contain content history', () => {
@@ -51,22 +52,27 @@ it('hides admin section by default', () => {
   // eslint-disable-next-line no-unused-expressions
   expect(f(sel.admin)).not.to.exist
   // eslint-disable-next-line no-unused-expressions
-  expect(f(sel.admin, sel.toggleAdminButton)).not.to.exist
+  expect(f(sel.admin, sel.displayAdminButton)).not.to.exist
 })
 
 it('state contains admin section switch', () => {
   expect(page.state('showAdmin')).to.equal(false)
 })
 
-it('toggles admin section upon button click', () => {
+it('displays admin section upon button click', () => {
   // eslint-disable-next-line no-unused-expressions
-  expect(f(sel.toggleAdminButton)).to.exist
-  // expect(f(sel.admin, 'h1')).to.exist`
-  f(sel.toggleAdminButton).simulate('click')
+  expect(f(sel.displayAdminButton)).to.exist
+  // eslint-disable-next-line no-unused-expressions
+  expect(f(sel.admin)).to.not.exist
+  f(sel.displayAdminButton).simulate('click')
   expect(page.state('showAdmin')).to.equal(true)
   // eslint-disable-next-line no-unused-expressions
   expect(f(sel.admin)).to.exist
   // eslint-disable-next-line no-unused-expressions
-  expect(f(sel.toggleAdminButton)).not.to.exist
-  // Sprawdzic czy komponent jest widoczny
+  expect(f(sel.displayAdminButton)).not.to.exist
+})
+
+it('hide admin section upon button click', () => {
+  // eslint-disable-next-line no-unused-expressions
+  expect(f(sel.hideAdminButton)).to.exist
 })

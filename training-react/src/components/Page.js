@@ -12,20 +12,18 @@ class Page extends Component {
     showAdmin: false
   }
 
-  handleToggleAdminClicked = (event, data, x) => {
-    console.log(x)    
+  handleEnableAdminClicked = (event, data) => {
     this.setState({
       ...this.state,
       showAdmin: !this.state.showAdmin
     })
   }
 
-  renderToggleAdminButton = () => {
-    const x = 1
+  renderEnableAdminButton = () => {
     return (
         <Button
-          className="toggleAdmin"
-          onClick={(event, data) => this.handleToggleAdminClicked(event, data, x)}
+          className="displayAdmin"
+          onClick={(event, data) => this.handleEnableAdminClicked(event, data)}
         >
           Włącz admin
         </Button>
@@ -45,7 +43,7 @@ class Page extends Component {
           {
             this.state.showAdmin
               ? <Admin />
-              : this.renderToggleAdminButton()
+              : this.renderEnableAdminButton()
           }
           <Grid.Row columns={3}>
             <Grid.Column>
