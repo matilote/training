@@ -59,9 +59,6 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "browserslist": [
     ">0.2%",
     "not dead",
@@ -109,13 +106,19 @@
       "node"
     ],
     "watchPlugins": [
-      "/home/gwozniak/REPO/TZ/training-react/node_modules/jest-watch-typeahead/filename.js",
-      "/home/gwozniak/REPO/TZ/training-react/node_modules/jest-watch-typeahead/testname.js"
+      "./node_modules/jest-watch-typeahead/filename.js",
+      "./node_modules/jest-watch-typeahead/testname.js"
     ]
   },
   "babel": {
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-enzyme": "^1.0.0-beta.1",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.9.1"
   }
 }
