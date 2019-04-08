@@ -1,12 +1,11 @@
-var schema = require('./data')
+var schema = require('./simpleData')
 
 var start = (obj) => {
-  delete obj.validation
-  return obj
-}
-
-var yyy = () => {
-
+  const data = Object.assign({}, obj)
+  const id = Object.assign({}, data._id)
+  delete id.validation
+  delete id.test
+  return { _id: id }
 }
 
 module.exports = {
