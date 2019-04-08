@@ -1,0 +1,4 @@
+Tablica wejsciowa zawiera nazwy pól:
+  np. ['validation', 'test']
+
+Zadanie polega na wyczyszczeniu schematu z podanych pól i zwróceniu go.
