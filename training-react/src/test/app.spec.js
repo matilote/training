@@ -1,3 +1,4 @@
+import 'jsdom-global/register'
 import React from 'react'
 import App from '../App'
 import Page from '../components/Page'
@@ -6,6 +7,8 @@ import Adapter from 'enzyme-adapter-react-16'
 import { shallow, mount, render } from 'enzyme'
 import chai from 'chai'
 import chaiEnzyme from 'chai-enzyme'
+
+Object.defineProperty(window, 'localStorage', { value: global.localStorage,configurable:true,enumerable:true,writable:true });
 
 configure({ adapter: new Adapter() })
 chai.use(chaiEnzyme())
